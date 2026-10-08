@@ -1,0 +1,41 @@
+{
+  "name": "small-business-toolkit",
+  "version": "1.0.0",
+  "description": "Twenty simple everyday tools for small-business owners.",
+  "main": "electron-main.js",
+  "author": "maniandmommy4545-ops",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^38.2.2",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.maniandmommy.smallbusinesstoolkit",
+    "productName": "Small Business Toolkit",
+    "asar": true,
+    "files": [
+      "index.html",
+      "electron-main.js",
+      "package.json",
+      "LICENSE"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Small Business Toolkit"
+    }
+  }
+}
